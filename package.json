@@ -1,0 +1,33 @@
+{
+  "name": "gulp_optimax",
+  "version": "1.0.0",
+  "description": "Gulp project for \"Optimax\" website",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eleventiy/optimax.git"
+  },
+  "author": "Gluschenko Lev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eleventiy/optimax/issues"
+  },
+  "homepage": "https://github.com/Eleventiy/optimax#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cache": "^1.0.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp.spritesmith": "^6.7.0",
+    "imagemin-pngquant": "^5.0.1"
+  }
+}

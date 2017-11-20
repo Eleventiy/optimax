@@ -9,8 +9,6 @@ gen### Sass template
 .sass-cache/
 *.css.map
 
-# Windows template
-
 # Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
@@ -33,3 +31,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Node modules
+node_modules/
