@@ -35,6 +35,3 @@ $RECYCLE.BIN/
 # Node modules
 node_modules/
 
-# Project folders
-app/fonts/
-dist/fonts/
