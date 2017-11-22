@@ -388,7 +388,6 @@ img {
 		height: 58px;
 		text-indent: -9999px;
 		background: transparent url("../img/icons/mouse.png") no-repeat;
-		transition: all 0.25s ease-in-out;
 		&:hover {
 			animation: spin-down 2s ease-in-out infinite;
 		}
@@ -452,7 +451,7 @@ img {
 		border: 2px solid $lightBlueColor;
 		border-radius: 45px;
 		background-color: $lightBlueColor;
-		transition: all 0.25s ease-in-out;
+		transition: all 0.35s ease-in-out;
 		&:hover {
 			color: $textColor;
 			background-color: transparent;
@@ -496,7 +495,7 @@ img {
 .sect-about {
 	position: relative;
 	padding: 100px 0;
-	background: transparent url("../img/about-bg.jpg") no-repeat;
+	background: $lightBlueColor url("../img/about-bg.jpg") no-repeat;
 	background-size: cover;
 	&::after {
 		content: '';
@@ -506,5 +505,653 @@ img {
 		bottom: 0;
 		left: 0;
 		background-color: rgba(#002538, 0.6);
+	}
+}
+.about-box {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	background-color: $whiteColor;
+	box-shadow: 13px 13px 18px 0 rgba(0, 0, 0, 0.26);
+	&__content {
+		position: relative;
+		flex: 1 50%;
+		padding-right: 77px;
+		padding-left: 90px;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 40px;
+			right: -15px;
+			z-index: 1;
+			display: block;
+			width: 0;
+			height: 0;
+			border-top: 13px solid transparent;
+			border-left: 15px solid $whiteColor;
+			border-bottom: 13px solid transparent;
+		}
+	}
+	&__title-block {
+		margin-bottom: 33px;
+	}
+	&__greeting {
+		margin-bottom: 6px;
+		color: $darkTextColor;
+		font-family: $robotoBold;
+		font-size: 16px;
+		line-height: 24px;
+	}
+	&__descr {
+		margin-bottom: 32px;
+		font-family: $robotoLight;
+		strong {
+			font-family: $robotoMedium;
+		}
+	}
+	&__link {
+		display: inline-block;
+		width: 157px;
+		max-width: 157px;
+		height: 44px;
+		max-height: 44px;
+		color: $whiteColor;
+		font-family: $robotoBold;
+		font-size: 14px;
+		line-height: 40px;
+		letter-spacing: 0.05em;
+		text-align: center;
+		text-decoration: none;
+		border: 2px solid $lightBlueColor;
+		border-radius: 45px;
+		background-color: $lightBlueColor;
+		transition: all 0.35s ease-in-out;
+		&:hover {
+			color: $textColor;
+			background-color: transparent;
+		}
+	}
+	&__photo {
+		position: relative;
+		flex: 1 50%;
+	}
+	&__img {
+		vertical-align: middle;
+	}
+	&__photo-descr {
+		position: absolute;
+		top: 43px;
+		left: 50px;
+		color: $darkTextColor;
+	}
+	&__photo-person {
+		font-family: $robotoMedium;
+		font-size: 16px;
+		line-height: 24px;
+	}
+	&__photo-text {
+		font-family: $robotoLight;
+		font-size: 12px;
+		line-height: 16px;
+	}
+}
+
+
+// ========================================
+// ** 5. ADVANTAGES SECTION **
+// ========================================
+.sect-advantages {
+	position: relative;
+	padding: 92px 0 100px;
+	background: transparent url("../img/advantages-bg.png") no-repeat;
+	background-size: cover;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		background:
+			linear-gradient(
+					to right,
+					$lightBlueColor,
+					$lightBlueColor 50%,
+					#409fd2 50%,
+					#409fd2 100%
+			);
+	}
+	&__title {
+		margin-bottom: 36px;
+		color: $whiteColor;
+		font-family: $robotoBlack;
+		font-size: 48px;
+		line-height: 60px;
+		text-align: center;
+	}
+	&__link {
+		display: block;
+		width: 605px;
+		max-width: 605px;
+		height: 64px;
+		max-height: 64px;
+		padding: 18px;
+		margin: 0 auto;
+		color: $lightBlueColor;
+		font-family: $robotoBold;
+		font-size: 18px;
+		letter-spacing: 0.05em;
+		text-align: center;
+		text-decoration: none;
+		border: 2px solid $whiteColor;
+		border-radius: 45px;
+		background-color: $whiteColor;
+		transition: all 0.35s ease-in-out;
+		box-shadow: 3px 3px 5px 0 rgba($blackColor, 0.21);
+		&:hover {
+			color: $whiteColor;
+			background-color: transparent;
+		}
+	}
+}
+
+.advantages-items {
+	display: flex;
+	align-items: center;
+	max-width: 975px;
+	margin: 0 auto 100px;
+	&__left,
+	&__right {
+		flex: 1 50%;
+		display: flex;
+		flex-direction: column;
+		padding: 0 30px;
+	}
+	&__left {
+		align-items: flex-end;
+		.advantages-item {
+			align-self: flex-start;
+			&:nth-child(2) {
+				margin-left: auto;
+				margin-right: auto;
+			}
+			&:nth-child(3) {
+				align-self: flex-end;
+			}
+		}
+	}
+	&__right {
+		align-items: flex-start;
+		.advantages-item {
+			align-self: flex-end;
+			&:nth-child(2) {
+				margin-left: auto;
+				margin-right: auto;
+			}
+			&:nth-child(3) {
+				align-self: flex-start;
+			}
+		}
+	}
+}
+.advantages-item {
+	position: relative;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	margin-bottom: 120px;
+	color: $whiteColor;
+	//&::after {
+	//	content: '';
+	//	position: absolute;
+	//	bottom: 0;
+	//	left: 50%;
+	//	margin-left: -2px;
+	//	border-left: 4px dotted rgba($whiteColor, 0.5);
+	//}
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&__text {
+		//flex: 1;
+		display: inline-block;
+		font-size: 16px;
+		line-height: 18px;
+	}
+	&__circle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100px;
+		height: 100px;
+		margin: 0 20px;
+		border-radius: 50%;
+		background-color: $whiteColor;
+	}
+	&__icon {
+		display: inline-block;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		&--wrench {
+			width: 38px;
+			height: 38px;
+			background-image: url("../img/icons/wrench.png");
+		}
+		&--shield {
+			width: 40px;
+			height: 43px;
+			background-image: url("../img/icons/shield.png");
+		}
+		&--guarantee {
+			width: 36px;
+			height: 39px;
+			background-image: url("../img/icons/guarantee.png");
+		}
+		&--sheets {
+			width: 40px;
+			height: 39px;
+			background-image: url("../img/icons/sheets.png");
+		}
+		&--economy {
+			width: 46px;
+			height: 46px;
+			background-image: url("../img/icons/economy.png");
+		}
+		&--tachometer {
+			width: 38px;
+			height: 38px;
+			background-image: url("../img/icons/tachometer.png");
+		}
+	}
+}
+
+
+// ========================================
+// ** 6. POPULAR GOODS SECTION **
+// ========================================
+.sect-popular {
+	padding: 97px 0;
+	&__title {
+		margin-bottom: 47px;
+		color: $lightBlueColor;
+		font-family: $robotoBold;
+		font-size: 24px;
+		line-height: 30px;
+		letter-spacing: 0.025em;
+	}
+}
+
+.popular-items {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.popular-item {
+	max-width: 260px;
+	&__img-block {
+		position: relative;
+	}
+	&__img-info {
+		position: absolute;
+		left: 0;
+		max-height: 26px;
+		padding: 1px 12px;
+		font-family: $robotoBold;
+		font-size: 10px;
+		letter-spacing: 0.05em;
+		box-shadow: 1px 1px 3px 0 rgba($blackColor, 0.35);
+		&::after {
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 100%;
+			display: block;
+			width: 0;
+			height: 0;
+			margin-top: -26px;
+			border: 6px solid $lightBlueColor;
+			border-right: 2px solid transparent;
+			border-bottom: 20px solid transparent;
+		}
+		&--amount {
+			top: 10px;
+			color: $whiteColor;
+			background-color: $lightBlueColor;
+		}
+		&--energy {
+			top: 46px;
+			color: $darkTextColor;
+			background-color: $whiteColor;
+			&::after {
+				border-color: $whiteColor;
+				border-right-color: transparent;
+				border-bottom-color: transparent;
+			}
+		}
+	}
+	&__title {
+		margin-bottom: 10px;
+		color: $lightBlueColor;
+		font-family: $robotoBold;
+		font-size: 16px;
+		line-height: 18px;
+		letter-spacing: 0.025em;
+	}
+	&__table {
+		display: block;
+		margin-bottom: 25px;
+		tbody {
+			display: block;
+		}
+		tr {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		th,
+		td {
+			font-size: 12px;
+			line-height: 24px;
+		}
+		th {
+			position: relative;
+			flex: 1;
+			text-align: left;
+		}
+		td {
+			color: $blackColor;
+			text-align: right;
+		}
+		b {
+			font-family: $robotoBold;
+			font-size: 14px;
+			line-height: 16px;
+			letter-spacing: 0.025em;
+		}
+	}
+	&__form {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__form-quantity {
+		box-sizing: border-box;
+		display: inline-block;
+		width: 85px;
+		max-width: 85px;
+		max-height: 44px;
+		padding-left: 16px;
+		color: $textColor;
+		font-family: $robotoBold;
+		font-size: 14px;
+		line-height: 40px;
+		border: 1px solid #ccc;
+		outline: 0;
+	}
+	&__form-submit {
+		display: block;
+		width: 143px;
+		max-width: 143px;
+		max-height: 44px;
+		padding: 11px;
+		color: $whiteColor;
+		font-family: $robotoBold;
+		font-size: 14px;
+		letter-spacing: 0.05em;
+		border: 2px solid $lightBlueColor;
+		border-radius: 45px;
+		background-color: $lightBlueColor;
+		transition: all 0.35s ease-in-out;
+		cursor: pointer;
+		outline: 0;
+		&:hover {
+			color: $textColor;
+			background-color: transparent;
+		}
+	}
+}
+
+
+// ========================================
+// ** 7. ARTICLES SECTION **
+// ========================================
+.sect-articles {
+	padding-bottom: 96px;
+	&__title-block {
+		margin-bottom: 50px;
+	}
+}
+.articles-items {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	.slick-dots {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: flex-end;
+		top: 50%;
+		right: 0;
+		bottom: auto;
+		transform: translateY(-50%);
+		li {
+			margin: 0 0 30px;
+			 button {
+				 width: 11px;
+				 height: 11px;
+				 padding: 0;
+				 border-radius: 50%;
+				 background: #d1d1d1;
+				 box-shadow: none;
+				 opacity: 1;
+			 }
+			&.slick-active {
+				button {
+					transform: scale(1.4);
+					background-color: $lightBlueColor;
+				}
+			}
+		}
+	}
+}
+.articles-item {
+	flex: 1 50%;
+	max-width: 550px;
+	padding-right: 30px;
+	margin-bottom: 30px;
+	display: flex !important;
+	justify-content: space-between;
+	outline: 0;
+	&__img-block,
+	&__content-block {
+		flex: 1 50%;
+	}
+	&__title-link {
+		text-decoration: none;
+	}
+	&__title {
+		margin-bottom: 10px;
+		color: $lighterBlueColor;
+		font-family: $robotoBold;
+		font-size: 18px;
+		line-height: 26px;
+		letter-spacing: 0.025em;
+		transition: all 0.25s ease-in-out;
+		&:hover {
+			color: $lightBlueColor;
+		}
+	}
+	&__descr {
+		max-height: 215px;
+		overflow: hidden;
+		letter-spacing: 0.025em;
+	}
+	&__link {
+		color: $lighterBlueColor;
+		font-family: $robotoBold;
+		font-size: 15px;
+		line-height: 18px;
+		text-decoration: none;
+		transition: all 0.25s ease-in-out;
+		&:hover {
+			color: $lightBlueColor;
+		}
+	}
+}
+
+
+// ========================================
+// ** 8. FEEDBACK SECTION **
+// ========================================
+.sect-feedback {
+	position: relative;
+	padding: 85px 0 50px;
+	background: transparent url("../img/advantages-bg.png") no-repeat;
+	background-size: cover;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		background-color: $lightBlueColor;
+	}
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__title-block,
+	&__content {
+		flex: 1;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		padding-left: 70px;
+	}
+	&__title {
+		color: $whiteColor;
+		&::after {
+			background-color: $whiteColor;
+		}
+	}
+	&__text {
+		margin-bottom: 8px;
+		color: $whiteColor;
+		font-family: $robotoLight;
+	}
+	&__company-name {
+		font-family: $robotoMedium;
+	}
+	&__link {
+		align-self: flex-end;
+		display: block;
+		width: 179px;
+		max-width: 179px;
+		max-height: 44px;
+		padding: 8px;
+		color: $whiteColor;
+		font-family: $robotoBold;
+		font-size: 14px;
+		letter-spacing: 0.05em;
+		text-align: center;
+		text-decoration: none;
+		border: 2px solid #04bbef;
+		border-radius: 45px;
+		background-color: #04bbef;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			color: $textColor;
+			border-color: $whiteColor;
+			background-color: $whiteColor;
+		}
+	}
+}
+
+// ========================================
+// ** 9. MAIN FOOTER **
+// ========================================
+.main-footer {
+	padding: 42px 0 13px;
+	background-color: #3b3d40;
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+	&__logo {
+		max-width: 200px;
+	}
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-right: 70px;
+		border-right: 1px solid #626262;
+	}
+	&__list-title {
+		color: $whiteColor;
+		font-family: $robotoCondensed;
+		font-size: 16px;
+		line-height: 1;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+	&__link {
+		color: #c3c3c3;
+		font-family: $robotoLight;
+		font-size: 12px;
+		line-height: 1;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__connect {
+		color: $whiteColor;
+	}
+	&__address {
+		display: flex;
+		margin-bottom: 20px;
+		font-family: $robotoLight;
+		font-size: 14px;
+		line-height: 20px;
+		letter-spacing: 0.05em;
+		i[class*="fa-"] {
+			margin-right: 5px;
+			font-size: 16px;
+		}
+	}
+	&__mail {
+		display: block;
+		margin-bottom: 20px;
+		color: $whiteColor;
+		font-family: $robotoLight;
+		font-size: 14px;
+		line-height: 1;
+		letter-spacing: 0.05em;
+		text-decoration: none;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			color: $textColor;
+		}
+	}
+	&__phone {
+		display: block;
+		font-family: $robotoCondensed;
+		font-size: 16px;
+		letter-spacing: 0.025em;
+		text-transform: uppercase;
+	}
+	&__copy {
+		color: #787878;
+		font-size: 12px;
+		line-height: 22px;
+		letter-spacing: 0.05em;
 	}
 }
