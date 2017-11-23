@@ -93,6 +93,7 @@ body {
 }
 
 body {
+	position: relative;
 	color: $textColor;
 	font-family: $robotoRegular;
 	font-size: 14px;
@@ -130,6 +131,173 @@ img {
 		width: 35px;
 		height: 2px;
 		background-color: $lighterBlueColor;
+	}
+}
+
+// ========================================
+// ** CALLBACK MODAL **
+// ========================================
+.modal-callback {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 9999;
+	display: none;
+	width: 455px;
+	max-width: 455px;
+	background-color: $whiteColor;
+	box-shadow: 0 21px 27px 0 rgba(0, 0, 0, 0.18);
+	transform: translate(-50%, -50%);
+	transition: 0.5s ease-in-out;
+	&__close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		display: block;
+		width: 30px;
+		height: 30px;
+		text-indent: -9999px;
+		border: none;
+		background: transparent;
+		box-shadow: none;
+		cursor: pointer;
+		outline: 0;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 20px;
+			height: 2px;
+			background-color: $lightBlueColor;
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+		&::after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+	&__wrapper {
+		padding: 42px 30px 50px;
+	}
+
+	&.active {
+		display: block;
+	}
+}
+.callback-form {
+	&__title {
+		margin-bottom: 35px;
+		font-size: 24px;
+		line-height: 40px;
+		&::after {
+			bottom: 10px;
+		}
+	}
+	&__control {
+		position: relative;
+		width: 100%;
+		margin-bottom: 15px;
+		overflow: hidden;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__input,
+	&__textarea {
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+		margin-top: 15px;
+		padding: 5px;
+		color: $lightBlueColor;
+		font: 14px $robotoBold;
+		border: none;
+		border-radius: 0;
+		background-color: $whiteColor;
+		transition: 0.25s ease-in-out;
+		outline: 0;
+		&:focus {
+			outline: 0;
+			~ label {
+				top: -4px;
+				color: $blackColor;
+			}
+			~ .callback-form__bar::before {
+				transform: translateX(0);
+			}
+		}
+		&:-webkit-autofill {
+			-webkit-box-shadow: 0 0 0 1000px $whiteColor inset;
+			-webkit-text-fill-color: $whiteColor !important;
+		}
+	}
+	&__textarea {
+		resize: none;
+	}
+	&__label {
+		position: absolute;
+		top: 5px;
+		left: 30px;
+		color: $lightBlueColor;
+		font: 12px $robotoBold;
+		cursor: text;
+		transition: 0.25s ease-in-out;
+	}
+	&__bar {
+		position: relative;
+		width: 100%;
+		height: 2px;
+		background-color: rgba(#54c3ff, 0.3);
+		transition: 0.25s ease-in-out;
+		&::before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 150%;
+			background-color: #54c3ff;
+			transform: translateX(-100%);
+		}
+	}
+	&__btn {
+		display: inline-block;
+		width: 156px;
+		max-width: 156px;
+		max-height: 44px;
+		padding: 13px;
+		margin-top: 35px;
+		color: $whiteColor;
+		font-family: $robotoBold;
+		font-size: 14px;
+		letter-spacing: 0.05em;
+		text-align: center;
+		border: none;
+		border-radius: 45px;
+		background-color: $lightBlueColor;
+		box-shadow: none;
+		cursor: pointer;
+		outline: 0;
+		transition: 0.3s ease-in-out;
+		&:hover {
+			box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
+		}
+		&:active {
+			box-shadow: inset 0 2px 3px 0 rgba(0, 0, 0, 0.39);
+		}
+	}
+}
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9998;
+	display: none;
+	background-color: rgba(#3b3d40, 0.67);
+	transition: 0.5s ease-in-out;
+	&.active {
+		display: block;
 	}
 }
 
@@ -237,7 +405,9 @@ img {
 		display: block;
 	}
 	&__link {
+		position: relative;
 		display: block;
+		overflow: hidden;
 		padding: 30px 20px;
 		color: $blackColor;
 		font-family: $robotoCondensed;
@@ -247,20 +417,25 @@ img {
 		text-transform: uppercase;
 		text-decoration: none;
 		transition: all 0.25s ease-in-out;
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 20px;
+			right: 20px;
+			height: 5px;
+			background-color: transparent;
+			transition: all 0.25s ease-in-out;
+		}
 		&:hover {
 			color: $lightBlueColor;
+			&::after {
+				background-color: $lightBlueColor;
+			}
 		}
 		&.active {
-			position: relative;
 			color: $lightBlueColor;
-			//border-bottom: 5px solid $lightBlueColor;
 			&::after {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				left: 20px;
-				right: 20px;
-				height: 5px;
 				background-color: $lightBlueColor;
 			}
 		}
@@ -288,10 +463,41 @@ img {
 		&:hover,
 		&:active,
 		&.active {
+			color: $whiteColor;
 			border-color: $lightBlueColor;
 			background-color: $lightBlueColor;
-			[class*="fa-"] {
-				color: $whiteColor;
+			svg {
+				fill: $whiteColor;
+				line {
+					stroke: $whiteColor;
+				}
+			}
+		}
+		svg {
+			fill: $blackColor;
+		}
+		&--search {
+			svg {
+				width: 10px;
+				height: 10px;
+				line {
+					fill: none;
+					stroke: $blackColor;
+					stroke-width: 2;
+					stroke-linecap: round;
+					stroke-miterlimit: 10;
+				}
+			}
+		}
+		&--info {
+			span {
+				font-size: 16px;
+			}
+		}
+		&--cart {
+			svg {
+				width: 17px;
+				height: 13px;
 			}
 		}
 		&-count {
@@ -384,12 +590,14 @@ img {
 		left: 50%;
 		z-index: 1;
 		display: block;
-		width: 35px;
-		height: 58px;
-		text-indent: -9999px;
-		background: transparent url("../img/icons/mouse.png") no-repeat;
+		img {
+			width: 35px;
+			height: 58px;
+		}
 		&:hover {
-			animation: spin-down 2s ease-in-out infinite;
+			img {
+				animation: spin-down 2s ease-in-out infinite;
+			}
 		}
 	}
 }
@@ -660,17 +868,19 @@ img {
 .advantages-items {
 	display: flex;
 	align-items: center;
-	max-width: 975px;
-	margin: 0 auto 100px;
+	overflow: hidden;
+	max-width: 960px;
+	margin: auto;
 	&__left,
 	&__right {
 		flex: 1 50%;
 		display: flex;
 		flex-direction: column;
-		padding: 0 30px;
 	}
 	&__left {
 		align-items: flex-end;
+		padding-right: 50px;
+		padding-left: 35px;
 		.advantages-item {
 			align-self: flex-start;
 			&:nth-child(2) {
@@ -680,10 +890,14 @@ img {
 			&:nth-child(3) {
 				align-self: flex-end;
 			}
+			&__circle {
+				margin-left: 20px;
+			}
 		}
 	}
 	&__right {
 		align-items: flex-start;
+		padding-left: 50px;
 		.advantages-item {
 			align-self: flex-end;
 			&:nth-child(2) {
@@ -693,42 +907,43 @@ img {
 			&:nth-child(3) {
 				align-self: flex-start;
 			}
+			&__circle {
+				margin-right: 20px;
+			}
 		}
 	}
 }
 .advantages-item {
-	position: relative;
 	flex: 1;
 	display: flex;
 	align-items: center;
 	margin-bottom: 120px;
 	color: $whiteColor;
-	//&::after {
-	//	content: '';
-	//	position: absolute;
-	//	bottom: 0;
-	//	left: 50%;
-	//	margin-left: -2px;
-	//	border-left: 4px dotted rgba($whiteColor, 0.5);
-	//}
-	&:last-child {
-		margin-bottom: 0;
-	}
 	&__text {
-		//flex: 1;
 		display: inline-block;
 		font-size: 16px;
 		line-height: 18px;
 	}
 	&__circle {
+		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		width: 100px;
 		height: 100px;
-		margin: 0 20px;
 		border-radius: 50%;
 		background-color: $whiteColor;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 100px;
+			left: auto;
+			width: 4px;
+			height: 670px;
+			max-height: 670px;
+			background: transparent url("../img/icons/dotted-line.png") center repeat-y;
+			opacity: 0.5;
+		}
 	}
 	&__icon {
 		display: inline-block;
@@ -791,6 +1006,9 @@ img {
 
 .popular-item {
 	max-width: 260px;
+	a {
+		text-decoration: none;
+	}
 	&__img-block {
 		position: relative;
 	}
@@ -799,6 +1017,7 @@ img {
 		left: 0;
 		max-height: 26px;
 		padding: 1px 12px;
+		color: $whiteColor;
 		font-family: $robotoBold;
 		font-size: 10px;
 		letter-spacing: 0.05em;
@@ -812,21 +1031,19 @@ img {
 			width: 0;
 			height: 0;
 			margin-top: -26px;
-			border: 6px solid $lightBlueColor;
+			border: 6px solid $orangeColor;
 			border-right: 2px solid transparent;
 			border-bottom: 20px solid transparent;
 		}
 		&--amount {
 			top: 10px;
-			color: $whiteColor;
-			background-color: $lightBlueColor;
+			background-color: $orangeColor;
 		}
 		&--energy {
 			top: 46px;
-			color: $darkTextColor;
-			background-color: $whiteColor;
+			background-color: $greenColor;
 			&::after {
-				border-color: $whiteColor;
+				border-color: $greenColor;
 				border-right-color: transparent;
 				border-bottom-color: transparent;
 			}
@@ -834,42 +1051,60 @@ img {
 	}
 	&__title {
 		margin-bottom: 10px;
-		color: $lightBlueColor;
+		color: $darkTextColor;
 		font-family: $robotoBold;
 		font-size: 16px;
 		line-height: 18px;
 		letter-spacing: 0.025em;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			color: $lightBlueColor;
+		}
 	}
-	&__table {
-		display: block;
+	&__list {
 		margin-bottom: 25px;
-		tbody {
-			display: block;
-		}
-		tr {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-		th,
-		td {
-			font-size: 12px;
-			line-height: 24px;
-		}
-		th {
-			position: relative;
-			flex: 1;
-			text-align: left;
-		}
-		td {
-			color: $blackColor;
-			text-align: right;
+		overflow-x: hidden;
+	}
+	&__list-item {
+		clear: both;
+		color: #565656;
+		font-size: 12px;
+		line-height: 24px;
+		&::before {
+			content:
+				"...................."
+				"...................."
+				"...................."
+				"....................";
+			float: left;
+			width: 0;
+			white-space: nowrap;
 		}
 		b {
+			color: $blackColor;
 			font-family: $robotoBold;
 			font-size: 14px;
 			line-height: 16px;
 			letter-spacing: 0.025em;
+		}
+	}
+	&__list-name {
+		padding-right: 0.33em;
+		background: $whiteColor;
+	}
+	&__list-descr {
+		float: right;
+		padding-left: 0.33em;
+		background: $whiteColor;
+	}
+	&__list-dots {
+		flex: 0 1 auto;
+		&::before {
+			display: block;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: clip;
+
 		}
 	}
 	&__form {
@@ -1077,28 +1312,39 @@ img {
 // ** 9. MAIN FOOTER **
 // ========================================
 .main-footer {
-	padding: 42px 0 13px;
+	padding: 65px 0 13px;
 	background-color: #3b3d40;
 	&__wrapper {
 		display: flex;
-		justify-content: space-between;
 		align-items: flex-start;
+		margin-bottom: 15px;
 	}
 	&__logo {
 		max-width: 200px;
 	}
 	&__nav {
+		flex: 1;
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		padding-left: 85px;
 		padding-right: 70px;
-		border-right: 1px solid #626262;
+		&::after {
+			content: '';
+			position: absolute;
+			right: 0;
+			top: -23px;
+			bottom: -84px;
+			width: 1px;
+			background-color: #626262;
+		}
 	}
 	&__list-title {
+		margin-bottom: 10px;
 		color: $whiteColor;
 		font-family: $robotoCondensed;
 		font-size: 16px;
-		line-height: 1;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
 	}
@@ -1106,43 +1352,77 @@ img {
 		color: #c3c3c3;
 		font-family: $robotoLight;
 		font-size: 12px;
-		line-height: 1;
 		text-decoration: none;
 		&:hover {
 			text-decoration: underline;
 		}
 	}
-	&__connect {
+	&__contacts {
+		padding-left: 73px;
+		padding-right: 70px;
+		//margin-left: auto;
 		color: $whiteColor;
+	}
+	&__contacts-icon {
+		margin-right: 10px;
+		fill: $whiteColor;
+		transition: all 0.3s ease-in-out;
+		&--location {
+			width: 13px;
+			height: 17px;
+		}
+		&--mail {
+			width: 16px;
+			height: 10px;
+		}
+		&--phone {
+			width: 15px;
+			height: 15px;
+			path {
+				fill: none;
+				stroke: $whiteColor;
+				stroke-width: 2;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+			}
+		}
 	}
 	&__address {
 		display: flex;
-		margin-bottom: 20px;
-		font-family: $robotoLight;
-		font-size: 14px;
-		line-height: 20px;
-		letter-spacing: 0.05em;
-		i[class*="fa-"] {
-			margin-right: 5px;
-			font-size: 16px;
+		margin-bottom: 15px;
+		p {
+			font-family: $robotoLight;
+			font-size: 14px;
+			line-height: 20px;
+			letter-spacing: 0.05em;
 		}
 	}
 	&__mail {
-		display: block;
-		margin-bottom: 20px;
-		color: $whiteColor;
-		font-family: $robotoLight;
-		font-size: 14px;
-		line-height: 1;
-		letter-spacing: 0.05em;
-		text-decoration: none;
-		transition: all 0.3s ease-in-out;
-		&:hover {
-			color: $textColor;
+		margin-bottom: 15px;
+		a {
+			color: $whiteColor;
+			font-family: $robotoLight;
+			font-size: 14px;
+			line-height: 1;
+			letter-spacing: 0.05em;
+			text-decoration: none;
+			transition: all 0.3s ease-in-out;
+			&:hover {
+				color: $textColor;
+				svg {
+					fill: $textColor;
+				}
+			}
 		}
 	}
+	&__phones {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: flex-end;
+		max-width: 130px;
+	}
 	&__phone {
-		display: block;
 		font-family: $robotoCondensed;
 		font-size: 16px;
 		letter-spacing: 0.025em;

@@ -18,4 +18,41 @@ $(function () {
 		});
 	}
 
+	// Callback Modal window
+	var callbackLink = $('#callbackLink'),
+			callbackModal = $('#modalCallback'),
+			modalOverlay = $('#modalOverlay'),
+			closeModalLink = $('#closeCallbackModal');
+
+	callbackLink.click(function(e) {
+		e.preventDefault();
+
+		callbackModal.addClass('active');
+		modalOverlay.addClass('active');
+	});
+
+	closeModalLink.click(function(e) {
+		e.preventDefault();
+
+		callbackModal.removeClass('active');
+		modalOverlay.removeClass('active');
+	});
+
+	modalOverlay.click(function(e) {
+		e.preventDefault();
+
+		callbackModal.removeClass('active');
+		$(this).removeClass('active');
+	});
+
+	// On press ESC button
+	$(document).keydown(function(e) {
+		if (e.keyCode === 27) {
+			callbackModal.removeClass('active');
+			modalOverlay.removeClass('active');
+		}
+	});
 });
+
+
+

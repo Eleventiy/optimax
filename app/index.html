@@ -45,7 +45,7 @@
 
 					<div class="top-line__callback">
 						<span class="top-line__phone">(044) 209 40 33</span>
-						<a class="top-line__callback-link" href="#">перезвоните мне</a>
+						<a class="top-line__callback-link" id="callbackLink" href="#">перезвоните мне</a>
 					</div>
 				</div>
 			</div>
@@ -70,16 +70,35 @@
 					</nav>
 
 					<div class="bottom-line__aside">
-						<div class="bottom-line__circle bottom-line__circle--search">
-							<i class="fa fa-search"></i>
+						<div class="bottom-line__circle  bottom-line__circle--search">
+							<svg version="1.1"
+							     xmlns="http://www.w3.org/2000/svg"
+							     xmlns:xlink="http://www.w3.org/1999/xlink"
+							     x="0px" y="0px"
+							     viewBox="0 0 20.5 20.5"
+                   style="enable-background:new 0 0 20.5 20.5;"
+                   xml:space="preserve">
+								<path d="M9.5,2C13.6,2,17,5.4,17,9.5S13.6,17,9.5,17S2,13.6,2,9.5S5.4,2,9.5,2 M9.5,0C4.3,0,0,4.3,0,9.5S4.3,19,9.5,19
+									S19,14.7,19,9.5S14.7,0,9.5,0L9.5,0z"></path>
+								<line x1="16" y1="16" x2="19.5" y2="19.5"></line>
+							</svg>
 						</div>
 
-						<div class="bottom-line__circle bottom-line__circle--info">
-							<i class="fa fa-question"></i>
+						<div class="bottom-line__circle  bottom-line__circle--info">
+							<span>?</span>
 						</div>
 
-						<div class="bottom-line__circle bottom-line__circle--cart active">
-							<i class="fa fa-opencart"></i>
+						<div class="bottom-line__circle  bottom-line__circle--cart  active">
+							<svg version="1.1"
+							     xmlns="http://www.w3.org/2000/svg"
+							     xmlns:xlink="http://www.w3.org/1999/xlink"
+							     x="0px" y="0px" viewBox="0 0 37 30"
+							     style="enable-background:new 0 0 37 30;"
+							     xml:space="preserve">
+								<path d="M14.9,5l0.3,2h19.4L31,17c-0.6,1.7-1.3,3-3,3H13c-1.7,0-2.4-1.4-3-3L6.1,0H0v2h4.5L8,17c0.7,2.6,2.2,5,5,5h15
+									c2.8,0,4.1-2.1,5-5l4-12H14.9z M28,24c-1.7,0-3,1.3-3,3c0,1.7,1.3,3,3,3s3-1.3,3-3C31,25.3,29.7,24,28,24z M29,28h-2v-2h2V28z
+									 M12,24c-1.7,0-3,1.3-3,3c0,1.7,1.3,3,3,3s3-1.3,3-3C15,25.3,13.7,24,12,24z M13,28h-2v-2h2V28z"></path>
+							</svg>
 							<span class="bottom-line__circle-count">3</span>
 						</div>
 					</div>
@@ -101,7 +120,9 @@
 				</a>
 			</div>
 		</div>
-		<a href="#features" class="sect-hero__more">Подробнее</a>
+		<a href="#features" class="sect-hero__more">
+			<img src="img/icons/mouse.png" alt="Иконка мышки">
+		</a>
 	</section>
 	<!--/. Features section -->
 
@@ -258,25 +279,34 @@
 
 					<div class="popular-item">
 						<div class="popular-item__img-block">
-							<span class="popular-item__img-info  popular-item__img-info--amount">до 15 м2</span>
-							<span class="popular-item__img-info  popular-item__img-info--energy">350 Вт/ч</span>
-							<img src="img/popular-item.jpg" alt="Изображение радиатора">
+							<a href="#">
+								<span class="popular-item__img-info  popular-item__img-info--amount">до 15 м2</span>
+								<span class="popular-item__img-info  popular-item__img-info--energy">350 Вт/ч</span>
+								<img src="img/popular-item.jpg" alt="Изображение радиатора">
+							</a>
 						</div>
-						<h3 class="popular-item__title">Электрорадиатор Elite на 11 секций</h3>
-						<table class="popular-item__table">
-							<tr class="popular-item__table-row">
-								<th>Мощность</th>
-								<td>1320 Вт</td>
-							</tr>
-							<tr>
-								<th>Габариты</th>
-								<td>570 х 955 х 96</td>
-							</tr>
-							<tr>
-								<th>Цена с НДС</th>
-								<td><b>4180.00 грн/шт</b></td>
-							</tr>
-						</table>
+
+						<a href="#">
+							<h3 class="popular-item__title">Электрорадиатор Elite на 11 секций</h3>
+						</a>
+
+						<ul class="popular-item__list">
+							<li class="popular-item__list-item">
+								<span class="popular-item__list-name">Мощность</span>
+								<span class="popular-item__list-dots"></span>
+								<span class="popular-item__list-descr">1320 Вт</span>
+							</li>
+							<li class="popular-item__list-item">
+								<span class="popular-item__list-name">Габариты</span>
+								<span class="popular-item__list-dots"></span>
+								<span class="popular-item__list-descr">570 х 955 х 96</span>
+							</li>
+							<li class="popular-item__list-item">
+								<span class="popular-item__list-name">Цена с НДС</span>
+								<span class="popular-item__list-dots"></span>
+								<span class="popular-item__list-descr"><b>4180.00 грн/шт</b></span>
+							</li>
+						</ul>
 						<form class="popular-item__form" action="#" method="post">
 							<label>
 								<input class="popular-item__form-quantity" type="number" name="quantity" min="1" max="10" step="1" value="1">
@@ -287,25 +317,34 @@
 
 					<div class="popular-item">
 						<div class="popular-item__img-block">
-							<span class="popular-item__img-info  popular-item__img-info--amount">до 15 м2</span>
-							<span class="popular-item__img-info  popular-item__img-info--energy">350 Вт/ч</span>
-							<img src="img/popular-item.jpg" alt="Изображение радиатора">
+							<a href="#">
+								<span class="popular-item__img-info  popular-item__img-info--amount">до 15 м2</span>
+								<span class="popular-item__img-info  popular-item__img-info--energy">350 Вт/ч</span>
+								<img src="img/popular-item.jpg" alt="Изображение радиатора">
+							</a>
 						</div>
-						<h3 class="popular-item__title">Электрорадиатор Elite на 11 секций</h3>
-						<table class="popular-item__table">
-							<tr class="popular-item__table-row">
-								<th>Мощность</th>
-								<td>1320 Вт</td>
-							</tr>
-							<tr>
-								<th>Габариты</th>
-								<td>570 х 955 х 96</td>
-							</tr>
-							<tr>
-								<th>Цена с НДС</th>
-								<td><b>4180.00 грн/шт</b></td>
-							</tr>
-						</table>
+
+						<a href="#">
+							<h3 class="popular-item__title">Электрорадиатор Elite на 11 секций</h3>
+						</a>
+
+						<ul class="popular-item__list">
+							<li class="popular-item__list-item">
+								<span class="popular-item__list-name">Мощность</span>
+								<span class="popular-item__list-dots"></span>
+								<span class="popular-item__list-descr">1320 Вт</span>
+							</li>
+							<li class="popular-item__list-item">
+								<span class="popular-item__list-name">Габариты</span>
+								<span class="popular-item__list-dots"></span>
+								<span class="popular-item__list-descr">570 х 955 х 96</span>
+							</li>
+							<li class="popular-item__list-item">
+								<span class="popular-item__list-name">Цена с НДС</span>
+								<span class="popular-item__list-dots"></span>
+								<span class="popular-item__list-descr"><b>4180.00 грн/шт</b></span>
+							</li>
+						</ul>
 						<form class="popular-item__form" action="#" method="post">
 							<label>
 								<input class="popular-item__form-quantity" type="number" name="quantity" min="1" max="10" step="1" value="1">
@@ -316,25 +355,34 @@
 
 					<div class="popular-item">
 						<div class="popular-item__img-block">
-							<span class="popular-item__img-info  popular-item__img-info--amount">до 15 м2</span>
-							<span class="popular-item__img-info  popular-item__img-info--energy">350 Вт/ч</span>
-							<img src="img/popular-item.jpg" alt="Изображение радиатора">
+							<a href="#">
+								<span class="popular-item__img-info  popular-item__img-info--amount">до 15 м2</span>
+								<span class="popular-item__img-info  popular-item__img-info--energy">350 Вт/ч</span>
+								<img src="img/popular-item.jpg" alt="Изображение радиатора">
+							</a>
 						</div>
-						<h3 class="popular-item__title">Электрорадиатор Elite на 11 секций</h3>
-						<table class="popular-item__table">
-							<tr class="popular-item__table-row">
-								<th>Мощность</th>
-								<td>1320 Вт</td>
-							</tr>
-							<tr>
-								<th>Габариты</th>
-								<td>570 х 955 х 96</td>
-							</tr>
-							<tr>
-								<th>Цена с НДС</th>
-								<td><b>4180.00 грн/шт</b></td>
-							</tr>
-						</table>
+
+						<a href="#">
+							<h3 class="popular-item__title">Электрорадиатор Elite на 11 секций</h3>
+						</a>
+
+						<ul class="popular-item__list">
+							<li class="popular-item__list-item">
+								<span class="popular-item__list-name">Мощность</span>
+								<span class="popular-item__list-dots"></span>
+								<span class="popular-item__list-descr">1320 Вт</span>
+							</li>
+							<li class="popular-item__list-item">
+								<span class="popular-item__list-name">Габариты</span>
+								<span class="popular-item__list-dots"></span>
+								<span class="popular-item__list-descr">570 х 955 х 96</span>
+							</li>
+							<li class="popular-item__list-item">
+								<span class="popular-item__list-name">Цена с НДС</span>
+								<span class="popular-item__list-dots"></span>
+								<span class="popular-item__list-descr"><b>4180.00 грн/шт</b></span>
+							</li>
+						</ul>
 						<form class="popular-item__form" action="#" method="post">
 							<label>
 								<input class="popular-item__form-quantity" type="number" name="quantity" min="1" max="10" step="1" value="1">
@@ -345,25 +393,34 @@
 
 					<div class="popular-item">
 						<div class="popular-item__img-block">
-							<span class="popular-item__img-info  popular-item__img-info--amount">до 15 м2</span>
-							<span class="popular-item__img-info  popular-item__img-info--energy">350 Вт/ч</span>
-							<img src="img/popular-item.jpg" alt="Изображение радиатора">
+							<a href="#">
+								<span class="popular-item__img-info  popular-item__img-info--amount">до 15 м2</span>
+								<span class="popular-item__img-info  popular-item__img-info--energy">350 Вт/ч</span>
+								<img src="img/popular-item.jpg" alt="Изображение радиатора">
+							</a>
 						</div>
-						<h3 class="popular-item__title">Электрорадиатор Elite на 11 секций</h3>
-						<table class="popular-item__table">
-							<tr class="popular-item__table-row">
-								<th>Мощность</th>
-								<td>1320 Вт</td>
-							</tr>
-							<tr>
-								<th>Габариты</th>
-								<td>570 х 955 х 96</td>
-							</tr>
-							<tr>
-								<th>Цена с НДС</th>
-								<td><b>4180.00 грн/шт</b></td>
-							</tr>
-						</table>
+
+						<a href="#">
+							<h3 class="popular-item__title">Электрорадиатор Elite на 11 секций</h3>
+						</a>
+
+						<ul class="popular-item__list">
+							<li class="popular-item__list-item">
+								<span class="popular-item__list-name">Мощность</span>
+								<span class="popular-item__list-dots"></span>
+								<span class="popular-item__list-descr">1320 Вт</span>
+							</li>
+							<li class="popular-item__list-item">
+								<span class="popular-item__list-name">Габариты</span>
+								<span class="popular-item__list-dots"></span>
+								<span class="popular-item__list-descr">570 х 955 х 96</span>
+							</li>
+							<li class="popular-item__list-item">
+								<span class="popular-item__list-name">Цена с НДС</span>
+								<span class="popular-item__list-dots"></span>
+								<span class="popular-item__list-descr"><b>4180.00 грн/шт</b></span>
+							</li>
+						</ul>
 						<form class="popular-item__form" action="#" method="post">
 							<label>
 								<input class="popular-item__form-quantity" type="number" name="quantity" min="1" max="10" step="1" value="1">
@@ -486,8 +543,11 @@
 	<footer class="main-footer">
 		<div class="container">
 			<div class="main-footer__wrapper">
+
 				<div class="main-footer__logo">
-					<img src="img/footer-logo.png" alt="Optimax логотип">
+					<a href="index.html">
+						<img src="img/footer-logo.png" alt="Optimax логотип">
+					</a>
 				</div>
 
 				<nav class="main-footer__nav">
@@ -516,19 +576,59 @@
 					</ul>
 				</nav>
 
-				<div class="main-footer__connect">
-					<p class="main-footer__address">
-						<i class="fa fa-map-marker"></i>
-						г.Киев <br> ул. Голосеевская 9 <br> 1 этаж, оф. 1
-					</p>
+				<div class="main-footer__contacts">
+					<div class="main-footer__address">
+						<svg class="main-footer__contacts-icon  main-footer__contacts-icon--location"
+								 version="1.1"
+								 xmlns="http://www.w3.org/2000/svg"
+								 xmlns:xlink="http://www.w3.org/1999/xlink"
+								 x="0px" y="0px"
+								 viewBox="0 0 65.3 87.9"
+								 style="enable-background:new 0 0 65.3 87.9;"
+								 xml:space="preserve">
+							<path d="M9.5,9.5c-10.9,11-12.7,28.1-4.2,41.1l23.1,35.1c1.5,2.3,4.6,2.9,6.9,1.4c0.6-0.4,1.1-0.9,1.4-1.4l23.1-35.1
+								c9.9-15.1,5.7-35.3-9.3-45.2C37.6-3.1,20.5-1.4,9.5,9.5z M54.9,47.3L32.6,81.1L10.4,47.3C2.3,35,5.7,18.5,18,10.4S46.8,5.7,54.9,18
+								C60.8,26.9,60.8,38.4,54.9,47.3z"></path>
+							<path d="M32.6,12.7c-10.9,0-19.7,8.8-19.7,19.7s8.8,19.7,19.7,19.7s19.7-8.8,19.7-19.7C52.3,21.5,43.5,12.7,32.6,12.7z M32.6,46.1
+								c-7.6,0-13.7-6.1-13.7-13.7c0-7.6,6.1-13.7,13.7-13.7s13.7,6.1,13.7,13.7c0,0,0,0,0,0C46.3,39.9,40.2,46,32.6,46.1z"></path>
+						</svg>
+						<p>
+							г.Киев <br> ул. Голосеевская 9 <br> 1 этаж, оф. 1
+						</p>
+					</div>
 
-					<a class="main-footer__mail" href="mailto:sales@optimax.ua">
-						<i class="fa fa-envelope"></i>
-						sales@optimax.ua
-					</a>
+					<div class="main-footer__mail">
+						<a href="mailto:sales@optimax.ua">
+							<svg class="main-footer__contacts-icon  main-footer__contacts-icon--mail"
+									 version="1.1"
+									 xmlns="http://www.w3.org/2000/svg"
+									 xmlns:xlink="http://www.w3.org/1999/xlink"
+									 x="0px" y="0px"
+									 viewBox="0 0 512 311.1"
+									 style="enable-background:new 0 0 512 311.1;"
+									 xml:space="preserve">
+								<path d="M511.6,26.2c0-14.4-11.8-26.2-26.2-26.2c0,0,0,0,0,0L26.2,0.6c-7,0-13.6,2.7-18.5,7.7C2.7,13.3,0,19.9,0,26.9l0.4,258
+									c0,7,2.7,13.6,7.7,18.5c5,4.9,11.5,7.7,18.5,7.7c0,0,0,0,0,0l459.2-0.6c14.5,0,26.2-11.8,26.2-26.3L511.6,26.2z M456.6,26.3
+									L256,165.7L55,26.8L456.6,26.3z M340.8,192l119,92.3l-408,0.6L171.5,192c5.7-4.4,6.8-12.7,2.3-18.4c-4.4-5.7-12.7-6.8-18.4-2.3
+									l-128.9,100L26.2,38.8l222.3,153.7c2.2,1.6,4.8,2.3,7.5,2.3c2.6,0,5.2-0.8,7.5-2.3L485.4,38.2l0.3,233.1l-128.9-99.9
+									c-5.7-4.4-14-3.4-18.4,2.3C334.1,179.4,335.1,187.6,340.8,192z"></path>
+							</svg>
+							sales@optimax.ua
+						</a>
+					</div>
 
 					<div class="main-footer__phones">
-						<i class="fa fa-phone"></i>
+						<svg class="main-footer__contacts-icon  main-footer__contacts-icon--phone"
+						     version="1.1"
+						     xmlns="http://www.w3.org/2000/svg"
+						     xmlns:xlink="http://www.w3.org/1999/xlink"
+						     x="0px" y="0px"
+								 viewBox="0 0 21.9 21.9" style="enable-background:new 0 0 21.9 21.9;"
+								 xml:space="preserve">
+							<path d="M20.9,15.9v3c0,1.1-0.9,2-2,2c-0.1,0-0.1,0-0.2,0c-3.1-0.3-6-1.4-8.6-3.1c-2.4-1.5-4.5-3.6-6-6
+								C2.4,9.2,1.3,6.3,1,3.2C0.9,2.1,1.7,1.1,2.8,1C2.9,1,2.9,1,3,1h3c1,0,1.9,0.7,2,1.7c0.1,1,0.4,1.9,0.7,2.8C9,6.3,8.8,7.1,8.2,7.6
+								L7,8.9c1.4,2.5,3.5,4.6,6,6l1.3-1.3c0.6-0.5,1.4-0.7,2.1-0.4c0.9,0.3,1.8,0.6,2.8,0.7C20.2,14,20.9,14.9,20.9,15.9z"></path>
+						</svg>
 						<strong class="main-footer__phone">(097) 880 43 43</strong>
 						<strong class="main-footer__phone">(066) 880 43 43</strong>
 						<strong class="main-footer__phone">(093) 880 43 43</strong>
@@ -536,10 +636,45 @@
 					</div>
 				</div>
 			</div>
-			<p class="main-footer__copy">© 2016 - 2017, Электрорадиаторы от производителя.</p>
+			<p class="main-footer__copy">&copy; 2016 - 2017, Электрорадиаторы от производителя.</p>
 		</div>
 	</footer>
 	<!--/. Main footer -->
+
+
+	<!-- Modal window -->
+	<div class="modal-callback" id="modalCallback">
+		<div class="modal-callback__wrapper">
+			<button class="modal-callback__close" id="closeCallbackModal">Закрыть</button>
+			<form class="callback-form" action="#" method="post">
+				<fieldset>
+					<legend class="callback-form__title  sect-title">Напишите нам</legend>
+
+					<div class="callback-form__control">
+						<input class="callback-form__input" name="user-name" id="userName" type="text" required tabindex="1">
+						<label class="callback-form__label" for="userName">Имя</label>
+						<div class="callback-form__bar"></div>
+					</div>
+
+					<div class="callback-form__control">
+						<input class="callback-form__input" name="user-mail" id="userMail" type="email" required tabindex="2">
+						<label class="callback-form__label" for="userMail">E-mail</label>
+						<div class="callback-form__bar"></div>
+					</div>
+
+					<div class="callback-form__control">
+						<textarea class="callback-form__textarea" name="user-message" id="userMessage" required tabindex="3"></textarea>
+						<label class="callback-form__label" for="userMessage">Сообщение</label>
+						<div class="callback-form__bar"></div>
+					</div>
+
+					<button class="callback-form__btn" type="submit" value="Отправить" tabindex="4">Отправить</button>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<div class="modal-overlay" id="modalOverlay"></div>
+	<!--/. Modal window -->
 
 	<!-- JavaScript -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
