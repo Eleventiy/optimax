@@ -88,5 +88,14 @@ gulp.task('build', function(callback) {
 		'sass',
 		['img', 'fonts'],
 		callback
-	)
+	);
+
+	var buildCss = gulp.src('app/css/**/*.css')
+		.pipe(gulp.dest('dist/css'));
+
+	var buildScripts = gulp.src('app/js/**/*.js')
+		.pipe(gulp.dest('dist/js'));
+
+	var buildHtml = gulp.src('app/*.html')
+		.pipe(gulp.dest('dist/'));
 });

@@ -1,81 +1,9 @@
 // ========================================
-// ** Font face **
-// ========================================
-@font-face {
-	font-family: "roboto_condensedregular";
-	src: url("../fonts/robotocondensed-regular-webfont.eot");
-	src: url("../fonts/robotocondensed-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/robotocondensed-regular-webfont.woff2") format("woff2"), url("../fonts/robotocondensed-regular-webfont.woff") format("woff"), url("../fonts/robotocondensed-regular-webfont.ttf") format("truetype"), url("../fonts/robotocondensed-regular-webfont.svg#roboto_condensedregular") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "robotoblack";
-	src: url("../fonts/roboto-black-webfont.eot");
-	src: url("../fonts/roboto-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-black-webfont.woff2") format("woff2"), url("../fonts/roboto-black-webfont.woff") format("woff"), url("../fonts/roboto-black-webfont.ttf") format("truetype"), url("../fonts/roboto-black-webfont.svg#robotomedium") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "robotobold";
-	src: url("../fonts/roboto-bold-webfont.eot");
-	src: url("../fonts/roboto-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-bold-webfont.woff2") format("woff2"), url("../fonts/roboto-bold-webfont.woff") format("woff"), url("../fonts/roboto-bold-webfont.ttf") format("truetype"), url("../fonts/roboto-bold-webfont.svg#robotomedium") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "robotolight";
-	src: url("../fonts/roboto-light-webfont.eot");
-	src: url("../fonts/roboto-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-light-webfont.woff2") format("woff2"), url("../fonts/roboto-light-webfont.woff") format("woff"), url("../fonts/roboto-light-webfont.ttf") format("truetype"), url("../fonts/roboto-light-webfont.svg#robotomedium") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "robotomedium";
-	src: url("../fonts/roboto-medium-webfont.eot");
-	src: url("../fonts/roboto-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-medium-webfont.woff2") format("woff2"), url("../fonts/roboto-medium-webfont.woff") format("woff"), url("../fonts/roboto-medium-webfont.ttf") format("truetype"), url("../fonts/roboto-medium-webfont.svg#robotomedium") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "robotoregular";
-	src: url("../fonts/roboto-regular-webfont.eot");
-	src: url("../fonts/roboto-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-regular-webfont.woff2") format("woff2"), url("../fonts/roboto-regular-webfont.woff") format("woff"), url("../fonts/roboto-regular-webfont.ttf") format("truetype"), url("../fonts/roboto-regular-webfont.svg#robotoregular") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "ds-digitalnormal";
-	src: url("../fonts/ds-digi-webfont.eot");
-	src: url("../fonts/ds-digi-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ds-digi-webfont.woff2") format("woff2"), url("../fonts/ds-digi-webfont.woff") format("woff"), url("../fonts/ds-digi-webfont.ttf") format("truetype"), url("../fonts/ds-digi-webfont.svg#ds-digitalnormal") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "ds-digitalbold";
-	src: url("../fonts/ds-digib-webfont.eot");
-	src: url("../fonts/ds-digib-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/ds-digib-webfont.woff2") format("woff2"), url("../fonts/ds-digib-webfont.woff") format("woff"), url("../fonts/ds-digib-webfont.ttf") format("truetype"), url("../fonts/ds-digib-webfont.svg#ds-digitalbold") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: "roboto_slabbold";
-	src: url("../fonts/robotoslab-bold-webfont.eot");
-	src: url("../fonts/robotoslab-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/robotoslab-bold-webfont.woff2") format("woff2"), url("../fonts/robotoslab-bold-webfont.woff") format("woff"), url("../fonts/robotoslab-bold-webfont.ttf") format("truetype"), url("../fonts/robotoslab-bold-webfont.svg#roboto_slabbold") format("svg");
-	font-weight: normal;
-	font-style: normal;
-}
-
-// ========================================
 // ** Extended styles **
 // ========================================
-@import "_mixins";
+@import "fonts";
+@import "vars";
+@import "mixins";
 
 // ========================================
 // ** Common styles **
@@ -134,6 +62,51 @@ img {
 	}
 }
 
+// Breadcrumbs
+.main-breadcrumbs {
+	width: 100%;
+	padding: 15px 0;
+	&__list {
+		display: flex;
+		align-items: center;
+	}
+	&__item {
+		position: relative;
+		display: block;
+		padding-right: 23px;
+		margin-right: 20px;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: 0;
+			display: block;
+			width: 4px;
+			height: 7px;
+			background: transparent url("../img/icons/angle-right.svg") no-repeat;
+			transform: translateY(-50%);
+		}
+		&:last-child {
+			&::after {
+				display: none;
+			}
+		}
+	}
+	&__link,
+	&__current {
+		color: #2d2d2d;
+		font-family: $robotoItalic;
+		font-size: 12px;
+		letter-spacing: 0.1em;
+	}
+	&__link {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
 // ========================================
 // ** CALLBACK MODAL **
 // ========================================
@@ -185,6 +158,7 @@ img {
 		display: block;
 	}
 }
+
 .callback-form {
 	&__title {
 		margin-bottom: 35px;
@@ -221,12 +195,28 @@ img {
 			outline: 0;
 			~ label {
 				top: -4px;
-				color: $blackColor;
+				font-size: 12px;
+				opacity: 1;
 			}
 			~ .callback-form__bar::before {
 				transform: translateX(0);
 			}
 		}
+		&:valid {
+			~ label {
+				top: -4px;
+				font-size: 12px;
+			}
+		}
+		//&:invalid {
+		//	~ label {
+		//		color: red;
+		//		opacity: 1;
+		//	}
+		//	~ .callback-form__bar {
+		//		background-color: red;
+		//	}
+		//}
 		&:-webkit-autofill {
 			-webkit-box-shadow: 0 0 0 1000px $whiteColor inset;
 			-webkit-text-fill-color: $whiteColor !important;
@@ -237,12 +227,13 @@ img {
 	}
 	&__label {
 		position: absolute;
-		top: 5px;
+		top: 15px;
 		left: 30px;
 		color: $lightBlueColor;
-		font: 12px $robotoBold;
+		font: 20px $robotoBold;
 		cursor: text;
 		transition: 0.25s ease-in-out;
+		opacity: 0.5;
 	}
 	&__bar {
 		position: relative;
@@ -286,6 +277,7 @@ img {
 		}
 	}
 }
+
 .modal-overlay {
 	position: fixed;
 	top: 0;
@@ -303,7 +295,7 @@ img {
 
 
 // ========================================
-// ** 1. HEADER **
+// ** MAIN HEADER **
 // ========================================
 .main-header {
 	width: 100%;
@@ -410,7 +402,7 @@ img {
 		overflow: hidden;
 		padding: 30px 20px;
 		color: $blackColor;
-		font-family: $robotoCondensed;
+		font-family: $robotoCondensedBold;
 		font-size: 16px;
 		line-height: 1;
 		letter-spacing: 0.05em;
@@ -510,7 +502,7 @@ img {
 			width: 16px;
 			height: 16px;
 			margin-top: -8px;
-			font-family: $robotoCondensed;
+			font-family: $robotoMedium;
 			color: $blackColor;
 			font-size: 11px;
 			letter-spacing: 0.05em;
@@ -524,792 +516,13 @@ img {
 
 
 // ========================================
-// ** 2. HERO SECTION **
+// ** PAGES **
 // ========================================
-.sect-hero {
-	position: relative;
-	display: flex;
-	height: calc(100vh - 127px);
-	background: transparent url("../img/hero-bg.jpg") no-repeat;
-	background-size: cover;
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background-color: rgba(#002538, 0.6);
-	}
-	.container {
-		position: relative;
-		z-index: 1;
-		margin: auto;
-	}
-	&__wrapper {
-		margin-left: 65px;
-		color: $whiteColor;
-	}
-	&__title {
-		margin-bottom: 17px;
-		font-family: $robotoMedium;
-		font-size: 64px;
-		line-height: 72px;
-	}
-	&__descr {
-		font-family: $robotoLight;
-		font-size: 20px;
-		line-height: 28px;
-		letter-spacing: -0.05em;
-	}
-	&__link {
-		position: relative;
-		display: block;
-		padding-left: 70px;
-		color: $lighterBlueColor;
-		font-family: $robotoMedium;
-		font-size: 20px;
-		line-height: 72px;
-		text-decoration: none;
-		&::after {
-			content: '';
-			position: absolute;
-			top: 50%;
-			left: 0;
-			display: block;
-			width: 50px;
-			height: 50px;
-			margin-top: -25px;
-			background: transparent url("../img/icons/play.png") no-repeat;
-		}
-	}
-	&__more {
-		content: '';
-		position: absolute;
-		bottom: 50px;
-		left: 50%;
-		z-index: 1;
-		display: block;
-		img {
-			width: 35px;
-			height: 58px;
-		}
-		&:hover {
-			img {
-				animation: spin-down 2s ease-in-out infinite;
-			}
-		}
-	}
-}
-
-@keyframes spin-down {
-	0% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(50px);
-	}
-	100% {
-		transform: translateY(0);
-	}
-}
-
+@import "pages/index";
+@import "pages/catalog";
 
 // ========================================
-// ** 3. FEATURES SECTION **
-// ========================================
-.sect-features {
-	padding: 90px 0 100px;
-	background-color: $grayColor;
-	&__title-block {
-		margin-bottom: 60px;
-	}
-	&__descr {
-		font-family: $robotoLight;
-		font-size: 22px;
-		line-height: 30px;
-		letter-spacing: 0.01em;
-		text-align: center;
-	}
-	&__text {
-		display: block;
-		color: $lighterBlueColor;
-		font-size: 22px;
-		line-height: 30px;
-		text-align: center;
-	}
-	&__wrapper {
-		max-width: 1020px;
-		margin: 45px auto 40px;
-	}
-	&__more {
-		display: block;
-		width: 171px;
-		max-width: 171px;
-		height: 44px;
-		max-height: 44px;
-		margin: 0 auto;
-		color: $whiteColor;
-		font-family: $robotoBold;
-		font-size: 14px;
-		line-height: 40px;
-		letter-spacing: 0.05em;
-		text-align: center;
-		text-decoration: none;
-		border: 2px solid $lightBlueColor;
-		border-radius: 45px;
-		background-color: $lightBlueColor;
-		transition: all 0.35s ease-in-out;
-		&:hover {
-			color: $textColor;
-			background-color: transparent;
-		}
-	}
-}
-.features-list {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	&__item {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		max-width: 205px;
-		width: 200px;
-		margin-bottom: 60px;
-		&:nth-child(3) {
-			margin-bottom: 0;
-		}
-	}
-	&__img {
-		max-width: 55px;
-		cursor: pointer;
-	}
-	&__descr {
-		color: $darkTextColor;
-		font-size: 14px;
-		line-height: 1;
-	}
-	&__right {
-		.features-list__descr {
-			margin-left: 20px;
-		}
-	}
-}
-
-// ========================================
-// ** 4. ABOUT SECTION **
-// ========================================
-.sect-about {
-	position: relative;
-	padding: 100px 0;
-	background: $lightBlueColor url("../img/about-bg.jpg") no-repeat;
-	background-size: cover;
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		background-color: rgba(#002538, 0.6);
-	}
-}
-.about-box {
-	position: relative;
-	z-index: 1;
-	display: flex;
-	align-items: center;
-	background-color: $whiteColor;
-	box-shadow: 13px 13px 18px 0 rgba(0, 0, 0, 0.26);
-	&__content {
-		position: relative;
-		flex: 1 50%;
-		padding-right: 77px;
-		padding-left: 90px;
-		&::after {
-			content: '';
-			position: absolute;
-			top: 40px;
-			right: -15px;
-			z-index: 1;
-			display: block;
-			width: 0;
-			height: 0;
-			border-top: 13px solid transparent;
-			border-left: 15px solid $whiteColor;
-			border-bottom: 13px solid transparent;
-		}
-	}
-	&__title-block {
-		margin-bottom: 33px;
-	}
-	&__greeting {
-		margin-bottom: 6px;
-		color: $darkTextColor;
-		font-family: $robotoBold;
-		font-size: 16px;
-		line-height: 24px;
-	}
-	&__descr {
-		margin-bottom: 32px;
-		font-family: $robotoLight;
-		strong {
-			font-family: $robotoMedium;
-		}
-	}
-	&__link {
-		display: inline-block;
-		width: 157px;
-		max-width: 157px;
-		height: 44px;
-		max-height: 44px;
-		color: $whiteColor;
-		font-family: $robotoBold;
-		font-size: 14px;
-		line-height: 40px;
-		letter-spacing: 0.05em;
-		text-align: center;
-		text-decoration: none;
-		border: 2px solid $lightBlueColor;
-		border-radius: 45px;
-		background-color: $lightBlueColor;
-		transition: all 0.35s ease-in-out;
-		&:hover {
-			color: $textColor;
-			background-color: transparent;
-		}
-	}
-	&__photo {
-		position: relative;
-		flex: 1 50%;
-	}
-	&__img {
-		vertical-align: middle;
-	}
-	&__photo-descr {
-		position: absolute;
-		top: 43px;
-		left: 50px;
-		color: $darkTextColor;
-	}
-	&__photo-person {
-		font-family: $robotoMedium;
-		font-size: 16px;
-		line-height: 24px;
-	}
-	&__photo-text {
-		font-family: $robotoLight;
-		font-size: 12px;
-		line-height: 16px;
-	}
-}
-
-
-// ========================================
-// ** 5. ADVANTAGES SECTION **
-// ========================================
-.sect-advantages {
-	position: relative;
-	padding: 92px 0 100px;
-	background: transparent url("../img/advantages-bg.png") no-repeat;
-	background-size: cover;
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: -1;
-		background:
-			linear-gradient(
-					to right,
-					$lightBlueColor,
-					$lightBlueColor 50%,
-					#409fd2 50%,
-					#409fd2 100%
-			);
-	}
-	&__title {
-		margin-bottom: 36px;
-		color: $whiteColor;
-		font-family: $robotoBlack;
-		font-size: 48px;
-		line-height: 60px;
-		text-align: center;
-	}
-	&__link {
-		display: block;
-		width: 605px;
-		max-width: 605px;
-		height: 64px;
-		max-height: 64px;
-		padding: 18px;
-		margin: 0 auto;
-		color: $lightBlueColor;
-		font-family: $robotoBold;
-		font-size: 18px;
-		letter-spacing: 0.05em;
-		text-align: center;
-		text-decoration: none;
-		border: 2px solid $whiteColor;
-		border-radius: 45px;
-		background-color: $whiteColor;
-		transition: all 0.35s ease-in-out;
-		box-shadow: 3px 3px 5px 0 rgba($blackColor, 0.21);
-		&:hover {
-			color: $whiteColor;
-			background-color: transparent;
-		}
-	}
-}
-
-.advantages-items {
-	display: flex;
-	align-items: center;
-	overflow: hidden;
-	max-width: 960px;
-	margin: auto;
-	&__left,
-	&__right {
-		flex: 1 50%;
-		display: flex;
-		flex-direction: column;
-	}
-	&__left {
-		align-items: flex-end;
-		padding-right: 50px;
-		padding-left: 35px;
-		.advantages-item {
-			align-self: flex-start;
-			&:nth-child(2) {
-				margin-left: auto;
-				margin-right: auto;
-			}
-			&:nth-child(3) {
-				align-self: flex-end;
-			}
-			&__circle {
-				margin-left: 20px;
-			}
-		}
-	}
-	&__right {
-		align-items: flex-start;
-		padding-left: 50px;
-		.advantages-item {
-			align-self: flex-end;
-			&:nth-child(2) {
-				margin-left: auto;
-				margin-right: auto;
-			}
-			&:nth-child(3) {
-				align-self: flex-start;
-			}
-			&__circle {
-				margin-right: 20px;
-			}
-		}
-	}
-}
-.advantages-item {
-	flex: 1;
-	display: flex;
-	align-items: center;
-	margin-bottom: 120px;
-	color: $whiteColor;
-	&__text {
-		display: inline-block;
-		font-size: 16px;
-		line-height: 18px;
-	}
-	&__circle {
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 100px;
-		height: 100px;
-		border-radius: 50%;
-		background-color: $whiteColor;
-		&::before {
-			content: '';
-			position: absolute;
-			top: 100px;
-			left: auto;
-			width: 4px;
-			height: 670px;
-			max-height: 670px;
-			background: transparent url("../img/icons/dotted-line.png") center repeat-y;
-			opacity: 0.5;
-		}
-	}
-	&__icon {
-		display: inline-block;
-		background-repeat: no-repeat;
-		background-position: 0 0;
-		&--wrench {
-			width: 38px;
-			height: 38px;
-			background-image: url("../img/icons/wrench.png");
-		}
-		&--shield {
-			width: 40px;
-			height: 43px;
-			background-image: url("../img/icons/shield.png");
-		}
-		&--guarantee {
-			width: 36px;
-			height: 39px;
-			background-image: url("../img/icons/guarantee.png");
-		}
-		&--sheets {
-			width: 40px;
-			height: 39px;
-			background-image: url("../img/icons/sheets.png");
-		}
-		&--economy {
-			width: 46px;
-			height: 46px;
-			background-image: url("../img/icons/economy.png");
-		}
-		&--tachometer {
-			width: 38px;
-			height: 38px;
-			background-image: url("../img/icons/tachometer.png");
-		}
-	}
-}
-
-
-// ========================================
-// ** 6. POPULAR GOODS SECTION **
-// ========================================
-.sect-popular {
-	padding: 97px 0;
-	&__title {
-		margin-bottom: 47px;
-		color: $lightBlueColor;
-		font-family: $robotoBold;
-		font-size: 24px;
-		line-height: 30px;
-		letter-spacing: 0.025em;
-	}
-}
-
-.popular-items {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.popular-item {
-	max-width: 260px;
-	a {
-		text-decoration: none;
-	}
-	&__img-block {
-		position: relative;
-	}
-	&__img-info {
-		position: absolute;
-		left: 0;
-		max-height: 26px;
-		padding: 1px 12px;
-		color: $whiteColor;
-		font-family: $robotoBold;
-		font-size: 10px;
-		letter-spacing: 0.05em;
-		box-shadow: 1px 1px 3px 0 rgba($blackColor, 0.35);
-		&::after {
-			content: '';
-			position: absolute;
-			top: 100%;
-			left: 100%;
-			display: block;
-			width: 0;
-			height: 0;
-			margin-top: -26px;
-			border: 6px solid $orangeColor;
-			border-right: 2px solid transparent;
-			border-bottom: 20px solid transparent;
-		}
-		&--amount {
-			top: 10px;
-			background-color: $orangeColor;
-		}
-		&--energy {
-			top: 46px;
-			background-color: $greenColor;
-			&::after {
-				border-color: $greenColor;
-				border-right-color: transparent;
-				border-bottom-color: transparent;
-			}
-		}
-	}
-	&__title {
-		margin-bottom: 10px;
-		color: $darkTextColor;
-		font-family: $robotoBold;
-		font-size: 16px;
-		line-height: 18px;
-		letter-spacing: 0.025em;
-		transition: all 0.3s ease-in-out;
-		&:hover {
-			color: $lightBlueColor;
-		}
-	}
-	&__list {
-		margin-bottom: 25px;
-		overflow-x: hidden;
-	}
-	&__list-item {
-		clear: both;
-		color: #565656;
-		font-size: 12px;
-		line-height: 24px;
-		&::before {
-			content:
-				"...................."
-				"...................."
-				"...................."
-				"....................";
-			float: left;
-			width: 0;
-			white-space: nowrap;
-		}
-		b {
-			color: $blackColor;
-			font-family: $robotoBold;
-			font-size: 14px;
-			line-height: 16px;
-			letter-spacing: 0.025em;
-		}
-	}
-	&__list-name {
-		padding-right: 0.33em;
-		background: $whiteColor;
-	}
-	&__list-descr {
-		float: right;
-		padding-left: 0.33em;
-		background: $whiteColor;
-	}
-	&__list-dots {
-		flex: 0 1 auto;
-		&::before {
-			display: block;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: clip;
-
-		}
-	}
-	&__form {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	&__form-quantity {
-		box-sizing: border-box;
-		display: inline-block;
-		width: 85px;
-		max-width: 85px;
-		max-height: 44px;
-		padding-left: 16px;
-		color: $textColor;
-		font-family: $robotoBold;
-		font-size: 14px;
-		line-height: 40px;
-		border: 1px solid #ccc;
-		outline: 0;
-	}
-	&__form-submit {
-		display: block;
-		width: 143px;
-		max-width: 143px;
-		max-height: 44px;
-		padding: 11px;
-		color: $whiteColor;
-		font-family: $robotoBold;
-		font-size: 14px;
-		letter-spacing: 0.05em;
-		border: 2px solid $lightBlueColor;
-		border-radius: 45px;
-		background-color: $lightBlueColor;
-		transition: all 0.35s ease-in-out;
-		cursor: pointer;
-		outline: 0;
-		&:hover {
-			color: $textColor;
-			background-color: transparent;
-		}
-	}
-}
-
-
-// ========================================
-// ** 7. ARTICLES SECTION **
-// ========================================
-.sect-articles {
-	padding-bottom: 96px;
-	&__title-block {
-		margin-bottom: 50px;
-	}
-}
-.articles-items {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
-	.slick-dots {
-		display: inline-flex;
-		flex-direction: column;
-		align-items: flex-end;
-		top: 50%;
-		right: 0;
-		bottom: auto;
-		transform: translateY(-50%);
-		li {
-			margin: 0 0 30px;
-			 button {
-				 width: 11px;
-				 height: 11px;
-				 padding: 0;
-				 border-radius: 50%;
-				 background: #d1d1d1;
-				 box-shadow: none;
-				 opacity: 1;
-			 }
-			&.slick-active {
-				button {
-					transform: scale(1.4);
-					background-color: $lightBlueColor;
-				}
-			}
-		}
-	}
-}
-.articles-item {
-	flex: 1 50%;
-	max-width: 550px;
-	padding-right: 30px;
-	margin-bottom: 30px;
-	display: flex !important;
-	justify-content: space-between;
-	outline: 0;
-	&__img-block,
-	&__content-block {
-		flex: 1 50%;
-	}
-	&__title-link {
-		text-decoration: none;
-	}
-	&__title {
-		margin-bottom: 10px;
-		color: $lighterBlueColor;
-		font-family: $robotoBold;
-		font-size: 18px;
-		line-height: 26px;
-		letter-spacing: 0.025em;
-		transition: all 0.25s ease-in-out;
-		&:hover {
-			color: $lightBlueColor;
-		}
-	}
-	&__descr {
-		max-height: 215px;
-		overflow: hidden;
-		letter-spacing: 0.025em;
-	}
-	&__link {
-		color: $lighterBlueColor;
-		font-family: $robotoBold;
-		font-size: 15px;
-		line-height: 18px;
-		text-decoration: none;
-		transition: all 0.25s ease-in-out;
-		&:hover {
-			color: $lightBlueColor;
-		}
-	}
-}
-
-
-// ========================================
-// ** 8. FEEDBACK SECTION **
-// ========================================
-.sect-feedback {
-	position: relative;
-	padding: 85px 0 50px;
-	background: transparent url("../img/advantages-bg.png") no-repeat;
-	background-size: cover;
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: -1;
-		background-color: $lightBlueColor;
-	}
-	&__wrapper {
-		display: flex;
-		justify-content: space-between;
-	}
-	&__title-block,
-	&__content {
-		flex: 1;
-	}
-	&__content {
-		display: flex;
-		flex-direction: column;
-		padding-left: 70px;
-	}
-	&__title {
-		color: $whiteColor;
-		&::after {
-			background-color: $whiteColor;
-		}
-	}
-	&__text {
-		margin-bottom: 8px;
-		color: $whiteColor;
-		font-family: $robotoLight;
-	}
-	&__company-name {
-		font-family: $robotoMedium;
-	}
-	&__link {
-		align-self: flex-end;
-		display: block;
-		width: 179px;
-		max-width: 179px;
-		max-height: 44px;
-		padding: 8px;
-		color: $whiteColor;
-		font-family: $robotoBold;
-		font-size: 14px;
-		letter-spacing: 0.05em;
-		text-align: center;
-		text-decoration: none;
-		border: 2px solid #04bbef;
-		border-radius: 45px;
-		background-color: #04bbef;
-		transition: all 0.3s ease-in-out;
-		&:hover {
-			color: $textColor;
-			border-color: $whiteColor;
-			background-color: $whiteColor;
-		}
-	}
-}
-
-// ========================================
-// ** 9. MAIN FOOTER **
+// ** MAIN FOOTER **
 // ========================================
 .main-footer {
 	padding: 65px 0 13px;
@@ -1343,7 +556,7 @@ img {
 	&__list-title {
 		margin-bottom: 10px;
 		color: $whiteColor;
-		font-family: $robotoCondensed;
+		font-family: $robotoCondensedBold;
 		font-size: 16px;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
@@ -1420,10 +633,10 @@ img {
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: flex-end;
-		max-width: 130px;
+		max-width: 135px;
 	}
 	&__phone {
-		font-family: $robotoCondensed;
+		font-family: $robotoCondensedBold;
 		font-size: 16px;
 		letter-spacing: 0.025em;
 		text-transform: uppercase;

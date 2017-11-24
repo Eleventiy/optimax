@@ -1,0 +1,744 @@
+// ========================================
+// ** 1. HERO SECTION **
+// ========================================
+.sect-hero {
+	position: relative;
+	display: flex;
+	height: calc(100vh - 127px);
+	background: transparent url("../img/hero-bg.jpg") no-repeat;
+	background-size: cover;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(#002538, 0.6);
+	}
+	.container {
+		position: relative;
+		z-index: 1;
+		margin: auto;
+	}
+	&__wrapper {
+		margin-left: 65px;
+		color: $whiteColor;
+	}
+	&__title {
+		margin-bottom: 17px;
+		font-family: $robotoMedium;
+		font-size: 64px;
+		line-height: 72px;
+	}
+	&__descr {
+		font-family: $robotoLight;
+		font-size: 20px;
+		line-height: 28px;
+		letter-spacing: -0.05em;
+	}
+	&__link {
+		position: relative;
+		display: block;
+		padding-left: 70px;
+		color: $lighterBlueColor;
+		font-family: $robotoMedium;
+		font-size: 20px;
+		line-height: 72px;
+		text-decoration: none;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			display: block;
+			width: 50px;
+			height: 50px;
+			margin-top: -25px;
+			background: transparent url("../img/icons/play.png") no-repeat;
+		}
+	}
+	&__more {
+		content: '';
+		position: absolute;
+		bottom: 50px;
+		left: 50%;
+		z-index: 1;
+		display: block;
+		img {
+			width: 35px;
+			height: 58px;
+		}
+		&:hover {
+			img {
+				animation: spin-down 2s ease-in-out infinite;
+			}
+		}
+	}
+}
+
+@keyframes spin-down {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(50px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+
+// ========================================
+// ** 2. FEATURES SECTION **
+// ========================================
+.sect-features {
+	padding: 90px 0 100px;
+	background-color: $grayColor;
+	&__title-block {
+		margin-bottom: 60px;
+	}
+	&__descr {
+		font-family: $robotoLight;
+		font-size: 22px;
+		line-height: 30px;
+		letter-spacing: 0.01em;
+		text-align: center;
+	}
+	&__text {
+		display: block;
+		color: $lighterBlueColor;
+		font-size: 22px;
+		line-height: 30px;
+		text-align: center;
+	}
+	&__wrapper {
+		max-width: 1020px;
+		margin: 45px auto 40px;
+	}
+	&__more {
+		@include button(block, 171px, $whiteColor, $lightBlueColor);
+	}
+}
+
+.features-list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	&__item {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 205px;
+		width: 200px;
+		margin-bottom: 60px;
+		&:nth-child(3) {
+			margin-bottom: 0;
+		}
+	}
+	&__img {
+		max-width: 55px;
+		cursor: pointer;
+		&:hover {
+			~ .features-list__hidden {
+				svg {
+					line {
+						&.left {
+							transform: translateY(21px);
+						}
+					}
+				}
+			}
+		}
+	}
+	&__descr {
+		color: $darkTextColor;
+		font-size: 14px;
+		line-height: 1;
+	}
+	&__right {
+		.features-list__descr {
+			margin-left: 20px;
+		}
+	}
+
+	&__hidden {
+		position: absolute;
+		right: -120px;
+		bottom: -20px;
+		//width: 150px;
+		//height: 21px;
+		overflow: hidden;
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			line {
+				stroke-width: 5;
+				stroke: #1587c0;
+				fill: none;
+				stroke-dasharray: 200;
+				transition: transform .6s ease-out;
+			}
+		}
+		&-content {
+			width: 298px;
+			max-width: 298px;
+			padding: 20px;
+			border: 1px solid #c1c1c1;
+			border-radius: 10px;
+			background-color: $whiteColor;
+		}
+		&-descr {
+			color: $textColor;
+			font-family: $robotoLight;
+			font-size: 11px;
+			line-height: 18px;
+			letter-spacing: 0.025em;
+		}
+	}
+}
+
+// ========================================
+// ** 3. ABOUT SECTION **
+// ========================================
+.sect-about {
+	position: relative;
+	padding: 100px 0;
+	background: $lightBlueColor url("../img/about-bg.jpg") no-repeat;
+	background-size: cover;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(#002538, 0.6);
+	}
+}
+
+.about-box {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	background-color: $whiteColor;
+	box-shadow: 13px 13px 18px 0 rgba(0, 0, 0, 0.26);
+	&__content {
+		position: relative;
+		flex: 1 50%;
+		padding-right: 77px;
+		padding-left: 90px;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 40px;
+			right: -15px;
+			z-index: 1;
+			display: block;
+			width: 0;
+			height: 0;
+			border-top: 13px solid transparent;
+			border-left: 15px solid $whiteColor;
+			border-bottom: 13px solid transparent;
+		}
+	}
+	&__title-block {
+		margin-bottom: 33px;
+	}
+	&__greeting {
+		margin-bottom: 6px;
+		color: $darkTextColor;
+		font-family: $robotoBold;
+		font-size: 16px;
+		line-height: 24px;
+	}
+	&__descr {
+		margin-bottom: 32px;
+		font-family: $robotoLight;
+		strong {
+			font-family: $robotoMedium;
+		}
+	}
+	&__link {
+		@include button(inline-block, 157px, $whiteColor, $lightBlueColor);
+	}
+	&__photo {
+		position: relative;
+		flex: 1 50%;
+	}
+	&__img {
+		vertical-align: middle;
+	}
+	&__photo-descr {
+		position: absolute;
+		top: 43px;
+		left: 50px;
+		color: $darkTextColor;
+	}
+	&__photo-person {
+		font-family: $robotoMedium;
+		font-size: 16px;
+		line-height: 24px;
+	}
+	&__photo-text {
+		font-family: $robotoLight;
+		font-size: 12px;
+		line-height: 16px;
+	}
+}
+
+
+// ========================================
+// ** 4. ADVANTAGES SECTION **
+// ========================================
+.sect-advantages {
+	position: relative;
+	padding: 92px 0 100px;
+	background: transparent url("../img/advantages-bg.png") no-repeat;
+	background-size: cover;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		background:
+			linear-gradient(
+					to right,
+					$lightBlueColor,
+					$lightBlueColor 50%,
+					#409fd2 50%,
+					#409fd2 100%
+			);
+	}
+	&__title {
+		margin-bottom: 36px;
+		color: $whiteColor;
+		font-family: $robotoBlack;
+		font-size: 48px;
+		line-height: 60px;
+		text-align: center;
+	}
+	&__link {
+		@include button(block, 605px, $lightBlueColor, $whiteColor);
+		max-height: 64px;
+		padding: 20px;
+		font-size: 18px;
+	}
+}
+
+.advantages-items {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	max-width: 960px;
+	margin: auto;
+	&__left,
+	&__right {
+		flex: 1 50%;
+		display: flex;
+		flex-direction: column;
+	}
+	&__left {
+		align-items: flex-end;
+		padding-right: 50px;
+		padding-left: 35px;
+		.advantages-item {
+			align-self: flex-start;
+			&:nth-child(2) {
+				margin-left: auto;
+				margin-right: auto;
+			}
+			&:nth-child(3) {
+				align-self: flex-end;
+			}
+			&__circle {
+				margin-left: 20px;
+			}
+		}
+	}
+	&__right {
+		align-items: flex-start;
+		padding-left: 50px;
+		.advantages-item {
+			align-self: flex-end;
+			&:nth-child(2) {
+				margin-left: auto;
+				margin-right: auto;
+			}
+			&:nth-child(3) {
+				align-self: flex-start;
+			}
+			&__circle {
+				margin-right: 20px;
+			}
+		}
+	}
+}
+
+.advantages-item {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	margin-bottom: 120px;
+	color: $whiteColor;
+	&__text {
+		display: inline-block;
+		font-size: 16px;
+		line-height: 18px;
+	}
+	&__circle {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		background-color: $whiteColor;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 100px;
+			left: auto;
+			width: 4px;
+			height: 670px;
+			max-height: 670px;
+			background: transparent url("../img/icons/dotted-line.png") center repeat-y;
+			opacity: 0.5;
+		}
+	}
+	&__icon {
+		display: inline-block;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		&--wrench {
+			width: 38px;
+			height: 38px;
+			background-image: url("../img/icons/wrench.png");
+		}
+		&--shield {
+			width: 40px;
+			height: 43px;
+			background-image: url("../img/icons/shield.png");
+		}
+		&--guarantee {
+			width: 36px;
+			height: 39px;
+			background-image: url("../img/icons/guarantee.png");
+		}
+		&--sheets {
+			width: 40px;
+			height: 39px;
+			background-image: url("../img/icons/sheets.png");
+		}
+		&--economy {
+			width: 46px;
+			height: 46px;
+			background-image: url("../img/icons/economy.png");
+		}
+		&--tachometer {
+			width: 38px;
+			height: 38px;
+			background-image: url("../img/icons/tachometer.png");
+		}
+	}
+}
+
+
+// ========================================
+// ** 5. POPULAR GOODS SECTION **
+// ========================================
+.sect-popular {
+	padding: 97px 0;
+	&__title {
+		margin-bottom: 47px;
+		color: $lightBlueColor;
+		font-family: $robotoBold;
+		font-size: 24px;
+		line-height: 30px;
+		letter-spacing: 0.025em;
+	}
+}
+
+.popular-items {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.popular-item {
+	max-width: 260px;
+	a {
+		text-decoration: none;
+	}
+	&__img-block {
+		position: relative;
+	}
+	&__img-info {
+		position: absolute;
+		left: 0;
+		max-height: 26px;
+		padding: 1px 12px;
+		color: $whiteColor;
+		font-family: $robotoBold;
+		font-size: 10px;
+		letter-spacing: 0.05em;
+		box-shadow: 1px 1px 3px 0 rgba($blackColor, 0.35);
+		&::after {
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 100%;
+			display: block;
+			width: 0;
+			height: 0;
+			margin-top: -26px;
+			border: 6px solid $orangeColor;
+			border-right: 2px solid transparent;
+			border-bottom: 20px solid transparent;
+		}
+		&--amount {
+			top: 10px;
+			background-color: $orangeColor;
+		}
+		&--energy {
+			top: 46px;
+			background-color: $greenColor;
+			&::after {
+				border-color: $greenColor;
+				border-right-color: transparent;
+				border-bottom-color: transparent;
+			}
+		}
+	}
+	&__title {
+		margin-bottom: 10px;
+		color: $darkTextColor;
+		font-family: $robotoBold;
+		font-size: 16px;
+		line-height: 18px;
+		letter-spacing: 0.025em;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			color: $lightBlueColor;
+		}
+	}
+	&__list {
+		margin-bottom: 25px;
+		overflow-x: hidden;
+	}
+	&__list-item {
+		clear: both;
+		color: #565656;
+		font-size: 12px;
+		line-height: 24px;
+		&::before {
+			content:
+				"...................."
+				"...................."
+				"...................."
+				"....................";
+			float: left;
+			width: 0;
+			white-space: nowrap;
+		}
+		b {
+			color: $blackColor;
+			font-family: $robotoBold;
+			font-size: 14px;
+			line-height: 16px;
+			letter-spacing: 0.025em;
+		}
+	}
+	&__list-name {
+		padding-right: 0.33em;
+		background: $whiteColor;
+	}
+	&__list-descr {
+		float: right;
+		padding-left: 0.33em;
+		background: $whiteColor;
+	}
+	&__list-dots {
+		flex: 0 1 auto;
+		&::before {
+			display: block;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: clip;
+
+		}
+	}
+	&__form {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__form-quantity {
+		box-sizing: border-box;
+		display: inline-block;
+		width: 85px;
+		max-width: 85px;
+		max-height: 44px;
+		padding-left: 16px;
+		color: $textColor;
+		font-family: $robotoBold;
+		font-size: 14px;
+		line-height: 40px;
+		border: 1px solid #ccc;
+		outline: 0;
+	}
+	&__form-submit {
+		@include button(block, 175px, $whiteColor, $lightBlueColor);
+	}
+}
+
+
+// ========================================
+// ** 6. ARTICLES SECTION **
+// ========================================
+.sect-articles {
+	padding-bottom: 96px;
+	&__title-block {
+		margin-bottom: 50px;
+	}
+}
+
+.articles-items {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	.slick-dots {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: flex-end;
+		top: 50%;
+		right: 0;
+		bottom: auto;
+		transform: translateY(-50%);
+		li {
+			margin: 0 0 30px;
+			button {
+				width: 11px;
+				height: 11px;
+				padding: 0;
+				border-radius: 50%;
+				background: #d1d1d1;
+				box-shadow: none;
+				opacity: 1;
+			}
+			&.slick-active {
+				button {
+					transform: scale(1.4);
+					background-color: $lightBlueColor;
+				}
+			}
+		}
+	}
+}
+
+.articles-item {
+	flex: 1 50%;
+	max-width: 550px;
+	padding-right: 30px;
+	margin-bottom: 30px;
+	display: flex !important;
+	justify-content: space-between;
+	outline: 0;
+	&__img-block,
+	&__content-block {
+		flex: 1 50%;
+	}
+	&__title-link {
+		text-decoration: none;
+	}
+	&__title {
+		margin-bottom: 10px;
+		color: $lighterBlueColor;
+		font-family: $robotoBold;
+		font-size: 18px;
+		line-height: 26px;
+		letter-spacing: 0.025em;
+		transition: all 0.25s ease-in-out;
+		&:hover {
+			color: $lightBlueColor;
+		}
+	}
+	&__descr {
+		max-height: 215px;
+		overflow: hidden;
+		letter-spacing: 0.025em;
+	}
+	&__link {
+		color: $lighterBlueColor;
+		font-family: $robotoBold;
+		font-size: 15px;
+		line-height: 18px;
+		text-decoration: none;
+		transition: all 0.25s ease-in-out;
+		&:hover {
+			color: $lightBlueColor;
+		}
+	}
+}
+
+
+// ========================================
+// ** 7. FEEDBACK SECTION **
+// ========================================
+.sect-feedback {
+	position: relative;
+	padding: 85px 0 50px;
+	background: transparent url("../img/advantages-bg.png") no-repeat;
+	background-size: cover;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		background-color: $lightBlueColor;
+	}
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__title-block,
+	&__content {
+		flex: 1;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		padding-left: 70px;
+	}
+	&__title {
+		color: $whiteColor;
+		&::after {
+			background-color: $whiteColor;
+		}
+	}
+	&__text {
+		margin-bottom: 8px;
+		color: $whiteColor;
+		font-family: $robotoLight;
+	}
+	&__company-name {
+		font-family: $robotoMedium;
+	}
+	&__link {
+		@include button(block, 179px, $whiteColor, #04bbef);
+		align-self: flex-end;
+		margin: 0;
+	}
+}
